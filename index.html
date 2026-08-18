@@ -10,18 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#ECEBE3;
-    --paper-2:#F5F4EE;
+    --paper:#F7F5F0;
+    --paper-2:#FBFAF6;
     --surface:#FFFFFF;
-    --ink:#1E2A44;
-    --ink-soft:#3A4560;
-    --muted:#706C5C;
-    --rule:#D7D3C4;
-    --rule-soft:#E4E1D5;
-    --green:#3B6B4A;
-    --green-soft:#E7EEE7;
-    --amber:#9C6B24;
-    --amber-soft:#F1E7D3;
+    --ink:#161B33;
+    --ink-soft:#31385C;
+    --muted:#6B6A7A;
+    --rule:#E2DFD3;
+    --rule-soft:#EAE7DB;
+    --green:#2F5EFF;
+    --green-soft:#E7ECFF;
+    --amber:#C2790E;
+    --amber-soft:#FDF1DC;
+    --coral:#FF6B4A;
+    --coral-soft:#FFE9E2;
     --max:1040px;
   }
 
@@ -117,7 +119,10 @@
   h1.headline em{
     font-style:italic;
     font-weight:500;
-    color:var(--green);
+    background:linear-gradient(90deg, var(--green), var(--coral));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
   }
   .sub{
     font-size:1.08rem;
@@ -260,6 +265,7 @@
   }
   .status.live{background:var(--green-soft); color:var(--green);}
   .status.shipped{background:var(--amber-soft); color:var(--amber);}
+  .status.beta{background:var(--coral-soft); color:var(--coral);}
 
   .case-grid{
     display:grid;
@@ -287,10 +293,13 @@
   /* SKILLS */
   .skill-groups{
     display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:34px 48px;
+    grid-template-columns:repeat(3, 1fr);
+    gap:34px 40px;
   }
-  @media (max-width:640px){
+  @media (max-width:900px){
+    .skill-groups{grid-template-columns:repeat(2, 1fr);}
+  }
+  @media (max-width:560px){
     .skill-groups{grid-template-columns:1fr;}
   }
   .skill-group h4{
@@ -425,10 +434,10 @@
 <div class="strip">
   <div class="wrap">
     <span class="item">Order Management</span>
-    <span class="item">Warehouse &amp; Inventory Sync</span>
-    <span class="item">Marketplace / EDI Integrations</span>
+    <span class="item">Inventory &amp; Demand Forecasting</span>
     <span class="item">Billing &amp; Reconciliation</span>
-    <span class="item">Agile Delivery</span>
+    <span class="item">AI / ML Products</span>
+    <span class="item">Workflow Automation</span>
   </div>
 </div>
 
@@ -446,7 +455,7 @@
 <section id="work">
   <div class="wrap">
     <p class="kicker">Selected Work</p>
-    <h2 class="section-title">Three problems in the post-order stack.</h2>
+    <h2 class="section-title">Problems solved in the post-order stack.</h2>
 
     <article class="case">
       <div class="case-head">
@@ -476,24 +485,24 @@
     <article class="case">
       <div class="case-head">
         <div>
-          <p class="case-id">ENTRY 02 — WORKFLOW AUTOMATION</p>
-          <h3 class="case-title">Returns and exchange sync, end to end</h3>
+          <p class="case-id">ENTRY 02 — AI / ML PRODUCT</p>
+          <h3 class="case-title">AI-powered inventory &amp; demand forecasting</h3>
         </div>
-        <span class="status shipped">Shipped</span>
+        <span class="status live">Live</span>
       </div>
-      <p style="color:var(--ink-soft); max-width:640px; margin:0;">Refunds, credits, and exchanges were being reconciled by hand across three disconnected systems — the storefront, the ERP, and our shipping/returns partner — creating real risk of double credits, missed refunds, and stock counts that didn't match reality.</p>
+      <p style="color:var(--ink-soft); max-width:640px; margin:0;">Clients were forecasting demand in spreadsheets — manually, weekly, and after the fact — which meant overstock on slow movers and stockouts on the products that actually sold. The gap between what the spreadsheet said and what the warehouse needed kept widening.</p>
       <div class="case-grid">
         <div class="case-col">
-          <h4>Scope</h4>
-          <p>Automated RMA creation, return-shipment tracking, and refund, credit, and exchange handling — including equal, greater, and lesser-value exchanges — with real-time status sync back to every system.</p>
+          <h4>My Role</h4>
+          <p>Owned requirements end to end and partnered directly with data science and engineering to shape the model inputs around real client ordering patterns, not just historical averages.</p>
         </div>
         <div class="case-col">
-          <h4>My Role</h4>
-          <p>Owned requirements and workflow design, defined the test plan across every return type, and coordinated delivery with engineering and QA.</p>
+          <h4>Rollout</h4>
+          <p>Launched a closed beta with a small group of clients first, used their feedback to refine accuracy and the recommendation workflow, then rolled out more broadly.</p>
         </div>
         <div class="case-col">
           <h4>Outcome</h4>
-          <p>Manual reconciliation dropped for clients running the workflow, and support tickets tied to return mismatches fell measurably.</p>
+          <p>Adoption was fast once live. Clients using it cut 5–6 hours a week of manual spreadsheet forecasting, with materially more reliable stock recommendations than the manual process it replaced.</p>
         </div>
       </div>
     </article>
@@ -501,7 +510,57 @@
     <article class="case">
       <div class="case-head">
         <div>
-          <p class="case-id">ENTRY 03 — CORE OWNERSHIP</p>
+          <p class="case-id">ENTRY 03 — PLATFORM CAPABILITY</p>
+          <h3 class="case-title">Workflow Automation Engine</h3>
+        </div>
+        <span class="status shipped">Shipped</span>
+      </div>
+      <p style="color:var(--ink-soft); max-width:640px; margin:0;">Clients ran the same operational rules by hand, over and over: someone moving data between systems, chasing a sign-off, or sending a status update manually. None of it needed a human judgment call — it needed a rule and a trigger.</p>
+      <div class="case-grid">
+        <div class="case-col">
+          <h4>What It Automates</h4>
+          <p>Inventory replenishment, purchase order approvals, order routing, customer notifications, warehouse task creation, and financial approvals — each running on predefined business rules instead of manual handling.</p>
+        </div>
+        <div class="case-col">
+          <h4>My Role</h4>
+          <p>Owned requirements and prioritization across the automation types, working with engineering to design rules that were flexible enough for different client operations without becoming unmanageable to configure.</p>
+        </div>
+        <div class="case-col">
+          <h4>Outcome</h4>
+          <p>Replaced manual, repetitive steps across six operational workflows with rule-based automation, freeing client teams to handle exceptions instead of routine tasks.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <div>
+          <p class="case-id">ENTRY 04 — AI / ML PRODUCT</p>
+          <h3 class="case-title">Xoro Help Bot</h3>
+        </div>
+        <span class="status beta">Beta</span>
+      </div>
+      <p style="color:var(--ink-soft); max-width:640px; margin:0;">Most client support tickets were answers we'd already given before — the same questions, asked by a different client, on a different day. Clients had no way to self-serve those answers, so every question became a ticket in the queue.</p>
+      <div class="case-grid">
+        <div class="case-col">
+          <h4>My Role</h4>
+          <p>Owned the product end to end — client-facing scope, support-team integration, and training the underlying model — working closely with the data team on what it should answer and how.</p>
+        </div>
+        <div class="case-col">
+          <h4>How It Works</h4>
+          <p>Client-facing and embedded in the support workflow, it answers common questions directly before a client needs to open a ticket at all.</p>
+        </div>
+        <div class="case-col">
+          <h4>Outcome</h4>
+          <p>Cut ticket volume by resolving common questions at the point of need, ahead of a support queue, rather than after one formed.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <div>
+          <p class="case-id">ENTRY 05 — CORE OWNERSHIP</p>
           <h3 class="case-title">Order-to-cash, day to day</h3>
         </div>
         <span class="status live">Ongoing</span>
@@ -510,7 +569,7 @@
       <div class="case-grid">
         <div class="case-col">
           <h4>Cadence</h4>
-          <p>Write PRDs and run sprint cycles with engineering, prioritizing fixes and features using SQL and usage data rather than the loudest request.</p>
+          <p>Write PRDs and run sprint cycles with engineering, prioritizing fixes and features using usage data and client input rather than the loudest request.</p>
         </div>
         <div class="case-col">
           <h4>Stakeholders</h4>
@@ -532,42 +591,67 @@
     <h2 class="section-title">What I actually use, week to week.</h2>
     <div class="skill-groups">
       <div class="skill-group">
-        <h4>Post-Order Operations</h4>
+        <h4>Product</h4>
         <ul>
-          <li>Order Management</li>
-          <li>Inventory &amp; Warehouse Sync</li>
-          <li>Marketplace / EDI Integrations</li>
-          <li>Returns &amp; Exchange Workflows</li>
-          <li>Billing &amp; Invoicing</li>
-          <li>Revenue Recognition</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Analytical</h4>
-        <ul>
-          <li>SQL</li>
-          <li>Product Analytics</li>
-          <li>Usage Dashboards</li>
-          <li>Data-Driven Prioritization</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h4>Product &amp; Delivery</h4>
-        <ul>
+          <li>Strategy</li>
+          <li>Discovery</li>
           <li>PRDs</li>
-          <li>Requirements Gathering</li>
           <li>Roadmapping</li>
+          <li>Prioritization</li>
+          <li>Requirements Gathering</li>
           <li>Agile / Scrum</li>
           <li>Launch Planning</li>
+          <li>Adoption Measurement</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Retail &amp; Commerce</h4>
+        <ul>
+          <li>Inventory Management</li>
+          <li>Purchasing</li>
+          <li>Omnichannel Commerce</li>
+          <li>POS Integration (Shopify POS)</li>
+          <li>B2B Commerce</li>
+          <li>Demand Forecasting</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Financial Systems</h4>
+        <ul>
+          <li>General Ledger</li>
+          <li>AP / AR</li>
+          <li>Invoicing</li>
+          <li>Reconciliation</li>
+          <li>Multi-Currency Handling</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>AI &amp; Automation</h4>
+        <ul>
+          <li>Workflow Automation</li>
+          <li>Applied AI / ML Features</li>
+          <li>Conversational AI (Helpdesk Chatbot)</li>
+          <li>Internal AI Tooling (MCP)</li>
         </ul>
       </div>
       <div class="skill-group">
         <h4>Stakeholder Management</h4>
         <ul>
-          <li>CXO Relationships</li>
-          <li>Cross-Functional Leadership</li>
-          <li>Engineering Partnership</li>
-          <li>Client Enablement</li>
+          <li>CXO Engagement</li>
+          <li>Cross-Functional Coordination</li>
+          <li>Engineering, QA &amp; Support</li>
+          <li>Enterprise Client Relationships</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h4>Tools &amp; Technology</h4>
+        <ul>
+          <li>ERP Systems</li>
+          <li>APIs</li>
+          <li>Integrations</li>
+          <li>Helpdesk / Ticketing Platforms</li>
+          <li>Data Dashboards</li>
+          <li>CRM</li>
         </ul>
       </div>
     </div>
